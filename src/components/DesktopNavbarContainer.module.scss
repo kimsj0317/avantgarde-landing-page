@@ -1,0 +1,8 @@
+.desktopNavbarContainer {
+  transform: translateY(0px);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[aria-hidden="true"] {
+    transform: translateY(-150%);
+  }
+}

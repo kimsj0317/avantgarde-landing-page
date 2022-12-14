@@ -1,0 +1,24 @@
+.gradientBackground {
+  background-image: linear-gradient(45deg,
+      var(--gradient-start),
+      var(--gradient-end));
+}
+
+.profileName {
+  margin-top: 30rem;
+  line-height: 28rem;
+  font-size: 24rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.profile {
+  font-size: 22rem;
+  line-height: 28rem;
+
+  &>ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 20rem;
+  }
+}

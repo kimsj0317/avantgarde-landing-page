@@ -1,0 +1,51 @@
+---
+import AnimatedText from "./AnimatedText";
+import MobileAbout from "./MobileAbout.astro";
+import styles from "./MobileApp.module.scss";
+import MobileGallery from "./MobileGallery";
+import MobileNavbar from "./MobileNavbar";
+import MobileRoadmap from "./MobileRoadmap";
+import MobileTeam from "./MobileTeam";
+---
+
+<MobileNavbar client:load />
+<main>
+    <div class={styles.mainVideoWrapper}>
+        <img src=".//loading.gif" class={styles.mainVideoLoading} />
+        <video
+            class={styles.mainVideo}
+            muted={true}
+            loop
+            autoplay={true}
+            src=".//main-video-desktop.mp4"></video>
+    </div>
+    <div class={styles.sectionWrapper}>
+        <img src=".//desktop-bg.png" alt="" class={styles.mobileBg} />
+        <h2 id="m_about">
+            <AnimatedText text="about" client:load />
+        </h2>
+        <MobileAbout />
+        <h2 id="m_roadmap">
+            <AnimatedText text="Roadmap" client:load />
+        </h2>
+        <MobileRoadmap client:load />
+        <h2 id="m_team">
+            <AnimatedText text="team" client:load />
+        </h2>
+        <MobileTeam client:load />
+        <h2 id="m_gallery">
+            <AnimatedText text="gallery" client:load />
+        </h2>
+        <MobileGallery client:load />
+        <footer
+            style={{
+                fontSize: "9rem",
+                textAlign: "center",
+                userSelect: "none",
+            }}
+        >
+            E-mail. info@celeb-chain.com • Copyright © 2022 Celebchain All
+            rights reserved.
+        </footer>
+    </div>
+</main>

@@ -1,0 +1,138 @@
+---
+import { MainVideoSoundToggleButton } from "./MainVideo";
+import { DesktopNavbarContainer } from "./DesktopNavbarContainer";
+import { DesktopNavbarLink } from "./DesktopNavbarLink";
+import { DesktopNavbarComingSoonLink } from "./DesktopNavbarComingSoonLink";
+import FlyText, { FlyIcon } from "./FlyText";
+---
+
+<DesktopNavbarContainer className="navbar" client:load>
+  <a href="/">
+    <img src=".//navbar-logo.png" class="navbar-logo" />
+  </a>
+  <div class="navbar-primary-links">
+    <DesktopNavbarLink client:load className="link" id="d_about">
+      <FlyText client:load text={"about"} />
+    </DesktopNavbarLink>
+    <DesktopNavbarLink client:load className="link" id="d_roadmap">
+      <FlyText client:load text={"Roadmap"} />
+    </DesktopNavbarLink>
+    <DesktopNavbarLink client:load className="link" id="d_team">
+      <FlyText client:load text={"Team"} />
+    </DesktopNavbarLink>
+    <DesktopNavbarLink client:load className="link" id="d_gallery">
+      <FlyText client:load text={"Gallery"} />
+    </DesktopNavbarLink>
+    <a class="item" href="https://studio.avantgarde.design/" target="_blank">
+      <FlyText client:load text={"AG Studio"} />
+    </a>
+  </div>
+  <div class="navbar-secondary-links">
+    <MainVideoSoundToggleButton client:load className="item" />
+    <a
+      class="item"
+      href="https://discord.com/invite/tZDtDSPRF8"
+      target="_blank"
+    >
+      <FlyIcon client:load>
+        <img src=".//navbar/discord.svg" alt="Discord" />
+      </FlyIcon>
+    </a>
+    <a class="item" href="https://twitter.com/NFT_Avant_Garde" target="_blank">
+      <FlyIcon client:load>
+        <img src=".//navbar/twitter.svg" alt="Twitter" />
+      </FlyIcon>
+    </a>
+    <DesktopNavbarComingSoonLink client:load className="item">
+      <FlyIcon client:load>
+        <img src=".//navbar/instagram.svg" alt="Instagram" />
+      </FlyIcon>
+    </DesktopNavbarComingSoonLink>
+    <a
+      class="item"
+      href="https://opensea.io/collection/ha-jung-woo-x-supernormal-by-avant-garde"
+      target="_blank"
+    >
+      <FlyIcon client:load>
+        <img src=".//navbar/opensea.svg" alt="Opensea" />
+      </FlyIcon>
+    </a>
+  </div>
+</DesktopNavbarContainer>
+
+<style lang="scss">
+  .navbar {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 40rem;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    padding: 48rem 90rem;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 124rem;
+      z-index: -1;
+      background-image: linear-gradient(to bottom, #262626, rgba(0, 0, 0, 0));
+    }
+  }
+
+  .navbar-logo {
+    width: 351rem;
+    height: 30rem;
+  }
+
+  .navbar-primary-links {
+    display: grid;
+    gap: 30rem;
+    grid-auto-flow: column dense;
+    grid-auto-columns: max-content;
+
+    a,
+    .link {
+      font-size: 14rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-secondary-links {
+    display: grid;
+    gap: 30rem;
+    grid-auto-flow: column dense;
+    grid-auto-columns: max-content;
+    align-items: center;
+
+    .item {
+      cursor: pointer;
+    }
+
+    button.item {
+      background-color: transparent;
+      border: 0;
+      width: 22rem;
+      height: 22rem;
+      padding: 0;
+    }
+
+    a.item {
+      font-size: 0;
+    }
+
+    a.item img {
+      width: 22rem;
+      height: 22rem;
+    }
+  }
+</style>

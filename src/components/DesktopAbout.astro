@@ -1,0 +1,79 @@
+---
+import { AnimatedText } from "./AnimatedText";
+---
+
+<div class="about-section" id="d_about">
+    <hgroup class="about-section-hgroup">
+        <h2>
+            <AnimatedText text="About" client:load />
+        </h2>
+    </hgroup>
+    <h3>
+        <AnimatedText text="// The Collection" client:load />
+    </h3>
+    <p>
+        We are proud to present the Ha Jung Woo x SuperNormal collection, a
+        limited edition line of PFP NFTs inspired by the work of renowned Korean
+        artist Ha Jung Woo. The collection was generated with more than 500
+        unique wearable items, each curated with Ha Jung Woo's signature style.
+        With only 1,978 NFTs available, this collection offers a rare
+        opportunity to own a unique piece of art that has the touch of both Ha
+        Jung Woo and SuperNormal.
+    </p>
+    <h3>
+        <AnimatedText text="// The Art concept" client:load />
+    </h3>
+    <p>
+        This collection features the unique style of Ha Jung Woo's artwork in
+        the form of NFTs that embodies the beauty and diversity SuperNormal
+        stands for.
+    </p>
+    <h3>
+        <AnimatedText text="// The Vision & Value" client:load />
+    </h3>
+    <p>
+        NFT technology is a cutting-edge tool that allows digital assets to
+        transcend their limitations by providing proof of ownership. We aim to
+        take it a step further by developing a simple process that allows the
+        holders of this collection to wear the PFPs in the metaverses they love.
+        Stay tuned for updates!
+    </p>
+</div>
+
+<style lang="scss">
+    .about-section {
+        margin-bottom: 144rem;
+
+        > h3 {
+            color: #ce8ab3;
+            font-size: 130rem;
+            font-style: italic;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        > p {
+            font-size: 28rem;
+            line-height: 38rem;
+            margin-bottom: 106rem;
+        }
+    }
+
+    .about-section-hgroup {
+        display: flex;
+        margin-bottom: 106rem;
+
+        > h2 {
+            margin-right: 290rem;
+        }
+
+        > p {
+            margin-top: 30rem;
+            font-size: 28rem;
+            font-weight: 700;
+            line-height: 38rem;
+        }
+    }
+</style>

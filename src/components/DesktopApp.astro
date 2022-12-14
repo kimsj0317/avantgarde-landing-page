@@ -1,0 +1,154 @@
+---
+import AnimatedText from "./AnimatedText";
+import DesktopAbout from "./DesktopAbout.astro";
+import DesktopNavbar from "./DesktopNavbar.astro";
+import { MainVideo } from "./MainVideo";
+import { DesktopTeam } from "./DesktopTeam";
+import DesktopGallery from "./DesktopGallery";
+import DesktopRoadmap from "./DesktopRoadmap";
+---
+
+<DesktopNavbar />
+<main>
+    <div class="main-video-wrapper">
+        <img src=".//loading.gif" class="main-video-loading" />
+        <MainVideo
+            client:load
+            className="main-video"
+            desktopSrc=".//main-video-desktop.mp4"
+            playsInline
+            loop
+            autoPlay
+        />
+    </div>
+    <div class="section-wrapper">
+        <img src=".//desktop-bg.png" class="gradient-bg" />
+        <img src=".//desktop-bg-end.png" class="gradient-bg-end" />
+        <DesktopAbout />
+        <div class="roadmap-section" id="d_roadmap">
+            <h2>
+                <AnimatedText text="Roadmap" client:load />
+            </h2>
+            <DesktopRoadmap client:load />
+        </div>
+        <div id="d_team">
+            <h2>
+                <AnimatedText text="Team" client:load />
+            </h2>
+            <DesktopTeam client:load />
+        </div>
+        <div id="d_gallery">
+            <h2>
+                <AnimatedText text="Gallery" client:load />
+            </h2>
+            <DesktopGallery client:load />
+        </div>
+        <footer
+            style={{
+                fontSize: "13rem",
+                textAlign: "center",
+                userSelect: "none",
+            }}
+        >
+            E-mail. info@celeb-chain.com • Copyright © 2022 Celebchain All
+            rights reserved.
+        </footer>
+    </div>
+</main>
+
+<style lang="scss">
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+    }
+
+    .roadmap-section {
+        margin-bottom: 148rem;
+    }
+
+    .roadmap-slide-wrapper {
+    }
+
+    .main-video-wrapper {
+        font-size: 0;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .main-video-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 640rem;
+        height: 266rem;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+        animation-delay: 0.75s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .main-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .section-wrapper {
+        position: relative;
+        padding: 60rem 90rem;
+        overflow: hidden;
+    }
+
+    .gradient-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+        transform: translateZ(0px);
+    }
+
+    .gradient-bg-end {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+        transform: translateZ(0px);
+    }
+
+    :global(h2) {
+        font-weight: 700;
+        font-style: italic;
+        font-size: 100rem;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 20rem;
+        scroll-margin-top: 100rem;
+    }
+
+    footer {
+        margin-top: 50rem;
+    }
+</style>

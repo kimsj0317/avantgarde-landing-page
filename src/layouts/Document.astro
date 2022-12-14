@@ -1,0 +1,40 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/svg+xml" href=".//favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="naver-site-verification"
+            content="3c01b8286b1b46228f3470aa794cf2a8087a9e01"
+        />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+        <style>
+            html {
+                font-family: "Roboto Condensed", sans-serif;
+            }
+
+            body {
+                margin: 0;
+            }
+        </style>
+    </body>
+</html>

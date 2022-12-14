@@ -1,0 +1,44 @@
+.roadmap-content {
+    font-size: 23rem;
+    line-height: 32rem;
+
+    h3 {
+        font-size: 30rem;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 32rem;
+    }
+
+    ol,
+    ul {
+        padding: 0;
+        padding-left: 24rem;
+        font-weight: 300;
+
+        li {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+.chip {
+    height: 22rem;
+    line-height: 24rem;
+    font-size: 12rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #6443e2;
+    padding: 0 10rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10rem;
+    margin-left: 4rem;
+    transform: translateY(-4rem);
+
+    &[data-secondary="true"] {
+        background-color: #ce8bb4;
+    }
+}

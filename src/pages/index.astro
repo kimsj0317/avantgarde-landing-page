@@ -1,0 +1,60 @@
+---
+import Document from "../layouts/Document.astro";
+import MobileApp from "../components/MobileApp.astro";
+import DesktopApp from "../components/DesktopApp.astro";
+---
+
+<Document title="AVANT GARDE">
+	<script is:inline>
+		let isInWork = false;
+		function updateDocumentRootFontSize() {
+			if (isInWork) {
+				return;
+			}
+			isInWork = true;
+			requestAnimationFrame(() => {
+				const innerWidth = window.innerWidth;
+				const desktopBaseWidth = 1920;
+				const mobileBaseWidth = 375;
+				const ratio =
+					innerWidth >= 960
+						? innerWidth / desktopBaseWidth
+						: innerWidth / mobileBaseWidth;
+				document.documentElement.style.fontSize = `${ratio}px`;
+				isInWork = false;
+			});
+		}
+		updateDocumentRootFontSize();
+		window.addEventListener("resize", () => {
+			updateDocumentRootFontSize();
+		});
+	</script>
+	<div class="desktop">
+		<DesktopApp client:media="(min-width: 961px)" />
+	</div>
+	<div class="mobile">
+		<MobileApp client:media="(max-width: 960px)" />
+	</div>
+</Document>
+
+<style lang="scss">
+	:root {
+		background-color: rgb(29, 29, 19);
+		color: #fff;
+	}
+
+	.desktop {
+		display: none;
+		@media (min-width: 961px) {
+			display: block;
+		}
+	}
+
+	.mobile {
+		display: none;
+		@media (max-width: 960px) {
+			display: block;
+			-webkit-text-size-adjust: 100%;
+		}
+	}
+</style>
